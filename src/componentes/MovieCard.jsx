@@ -1,9 +1,10 @@
 import "./MovieCard.css";
 import { Link } from "react-router-dom";
+import { getUrlImagen } from "../utils/getUrlImagen";
 
 export function MovieCard({ movie }) {
   //console.log(movie);
-  const imageUrl = "https://image.tmdb.org/t/p/w300" + movie.poster_path;
+  const imageUrl = getUrlImagen(movie,300);
   return (
     <li className="contenedor-movie">
       <Link to={"/movies/"+movie.id}>

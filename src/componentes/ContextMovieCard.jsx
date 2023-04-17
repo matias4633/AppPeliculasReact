@@ -6,7 +6,7 @@ export function ContextMovieCard(){
 const [movies,setMovies] =useState([]);
 
 useEffect(()=>{
-    get('/3/movie/popular').then((data) =>{
+    get('movie/popular').then((data) =>{
         setMovies(data.results);
     })
 },[]);

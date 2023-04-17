@@ -1,3 +1,6 @@
+a{
+    text-decoration: none;
+}
 .titulo-pelicula{
     color: white;
     font-size: 1.5rem;
@@ -16,6 +19,7 @@
 }
 .imagen{
     border-radius: 10px;
+    object-fit: cover;
 }
 
 @media(max-width: 560px){

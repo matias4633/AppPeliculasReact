@@ -1,0 +1,34 @@
+.contenedor-detalles{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.col{
+    max-width: 400px;
+}
+.contenedor-tarjeta{
+    display: flex;
+    flex-direction: column;
+}
+.imagen-detalles{
+   border-radius: 15px;
+}
+.titulo-detalles{
+    color:white;
+    margin:1rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.descripcion{
+    color: white;
+    margin: 1rem;
+}
+.generos{
+    color: white;
+}
+.contenedor-similares{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 1rem;
+    padding: 2rem;
+}
