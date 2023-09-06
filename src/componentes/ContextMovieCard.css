@@ -1,11 +1,6 @@
 .contenedor-peliculas{
     background-color: #080f28;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-    gap: 1rem;
-    padding: 2rem;
-}
-.bannerContent{
-    display: flex;
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+    gap: 4px;
 }

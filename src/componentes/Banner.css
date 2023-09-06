@@ -1,11 +1,54 @@
+.bannerContent{
+    height: 72vh;
+    position: absolute;
+    width: 100%;
+}
+
 .contenedorBanner{
-    width: 95%;
-    background: white;
+    width: 100%;
+    height: 100%;
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
    /* min-width: 1400px;*/
-    object-fit: fill;
-    border-radius: 1rem;
-    margin: 0 2.5%;
+    object-fit: cover;
+}
+
+.contenedorBanner img {
+    height: 65vh;
+   
+}
+
+.contenedorBanner::after{
+    content: "";
+    width: 100%;
+    height: 72vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(to top, #000000, transparent);
+}
+
+.cont-info{
+    position: relative;
+    bottom:240px;
+    padding: 14px;
+    color:white;
+}
+.cont-info h3{
+    font-size: 28px;
+}
+
+.subTituloBlanco{
+    
+}
+
+.bottonPrincipal{
+    background-color: blue;
+    border: none;
+    padding:4px 18px;
+    border-radius:8px;
+    color: white;
+    font-weight: bold;
+    margin: 12px 0;
 }

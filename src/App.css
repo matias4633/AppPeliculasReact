@@ -16,12 +16,13 @@ body{
   font-size: 3rem;
 }
 .logoPrincipal{
-  width: 200px;
+  width: 74px;
   margin: 0 2.5%;
   position: fixed;
   z-index: 9;
   overflow: hidden;
   border-radius: 5rem;
+  top: -15px;
 }
 
 .logoPrincipal img{
