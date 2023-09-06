@@ -1,11 +1,11 @@
 .contenedorBanner{
     width: 95%;
-    height: 673px;
     background: white;
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
-    min-width: 1400px;
+   /* min-width: 1400px;*/
     object-fit: fill;
     border-radius: 1rem;
+    margin: 0 2.5%;
 }

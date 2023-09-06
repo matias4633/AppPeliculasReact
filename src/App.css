@@ -17,5 +17,13 @@ body{
 }
 .logoPrincipal{
   width: 200px;
-  margin: 0 40px;
+  margin: 0 2.5%;
+  position: fixed;
+  z-index: 9;
+  overflow: hidden;
+  border-radius: 5rem;
+}
+
+.logoPrincipal img{
+  width: 100%;
 }

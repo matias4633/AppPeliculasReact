@@ -6,17 +6,15 @@ export function MovieCard({ movie }) {
   console.log(movie);
   const imageUrl = getUrlImagen(movie,300);
   return (
-    <li className="contenedor-movie">
+    <div className="contenedor-movie">
       <Link to={"/movies/"+movie.id}>
         <img
-          className="imagen"
-          width={230}
-          height={345}
+          className="imagenCard"
           src={imageUrl}
           alt={movie.title}
         ></img>
         <label className="titulo-pelicula">{movie.title}</label>
       </Link>
-    </li>
+    </div>
   );
 }

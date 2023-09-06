@@ -5,9 +5,9 @@ import logo from "./assets/block.png";
 function App() {
   return (
     <div>
-      <header>
-        <a href={'/'} ><img className="logoPrincipal" src={logo}></img></a>
-      </header>
+      <div className="logoPrincipal">
+        <a href={'/'} ><img  src={logo}></img></a>
+      </div>
       <MisRutas/>
     </div>
   );

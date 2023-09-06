@@ -18,11 +18,11 @@ useEffect(()=>{
             {movies.length > 0 && <Banner array={movies} />}
         </div>
         
-        <ul className="contenedor-peliculas">
+        <div className="contenedor-peliculas">
             {movies.map((movie)=>{
                 return <MovieCard movie={movie} key={movie.id}/>
             })}
-        </ul>
+        </div>
     </div>
     );
 }

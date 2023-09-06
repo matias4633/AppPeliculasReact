@@ -37,10 +37,10 @@ export function Banner({array}){
         <div>
             {idPeli && 
             <Link to={"/movies/"+idPeli}>
-            {fondoBanner && <div className="contenedorBanner" id="banner" style={{backgroundImage:`url(${fondoBanner})`}}>
-                <h2>{titulo}</h2>
-
-                </div>}
+            {fondoBanner && <img className="contenedorBanner" id="banner" src={fondoBanner}>
+               
+ 
+                </img>}
             </Link>}
             
         </div>

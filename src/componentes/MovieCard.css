@@ -17,15 +17,23 @@ a{
     opacity: 0.5;
     transition: 0.5s;
 }
-.imagen{
+.imagenCard{
     border-radius: 10px;
     object-fit: cover;
+    width : 190px;
+    height : 290px;
 }
 
 @media(max-width: 560px){
 
-    .imagen{
+    .imagenCard{
         width: 90%;
         height: auto;
+    }
+    .logoPrincipal {
+        width: 146px;
+        margin: 0 2.5%;
+        position: static;
+        z-index: 0;
     }
 }
