@@ -5,6 +5,12 @@ a{
     color: white;
     font-size: 15px;
     text-align: center;
+    font-weight: bold;
+}
+.contenedor-movie{
+    display: flex;
+    flex-direction: column;
+    position:relative;
 }
 .contenedor-movie a{
     display: flex;
@@ -22,6 +28,17 @@ a{
     object-fit: cover;
     width : 146px;
     height : 200px;
+}
+
+.puntaje{
+    color:white;
+    background-color:#03a9f4;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 2%;
+    left: 14%;
 }
 
 /*@media(max-width: 560px){

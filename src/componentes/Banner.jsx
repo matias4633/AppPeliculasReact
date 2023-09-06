@@ -64,8 +64,6 @@ export function Banner({array}){
                     <p>{descrip}</p>
                     <button className="bottonPrincipal">VER PELICULA</button>
                 </div>
-            
-
             </Link>}
             
         </div>

@@ -4,3 +4,10 @@
     grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
     gap: 4px;
 }
+
+.tituloContenedor{
+    color:white;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom:6px;
+}

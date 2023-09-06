@@ -1,6 +1,5 @@
 .bannerContent{
     height: 72vh;
-    position: absolute;
     width: 100%;
 }
 
@@ -44,7 +43,7 @@
 }
 
 .bottonPrincipal{
-    background-color: blue;
+    background-color: #03a9f4;
     border: none;
     padding:4px 18px;
     border-radius:8px;
