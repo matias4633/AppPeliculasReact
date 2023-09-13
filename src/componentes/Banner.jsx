@@ -62,7 +62,7 @@ export function Banner({array}){
             <div className="cont-info">
                     <h3 className="subTituloBlanco">{titulo}</h3>
                     <p>{descrip}</p>
-                    <button className="bottonPrincipal">VER PELICULA</button>
+                    <button className="bottonPrincipal">▶ VER PELICULA</button>
                 </div>
             </Link>}
             

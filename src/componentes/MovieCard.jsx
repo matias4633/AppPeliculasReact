@@ -15,7 +15,7 @@ export function MovieCard({ movie }) {
             src={imageUrl}
             alt={movie.title}
           ></img>
-          <span className="puntaje">{movie.vote_average % 1 == 0 ? (movie.vote_average+'.0') : movie.vote_average }</span>
+          <span className="puntaje">{movie.vote_average % 1 == 0 ? (movie.vote_average+'.0') : movie.vote_average.toFixed(1) }</span>
         </div>
         
         

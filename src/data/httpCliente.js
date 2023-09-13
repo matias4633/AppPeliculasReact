@@ -1,9 +1,7 @@
 const API = "https://api.themoviedb.org/3/";
-const API_KEY = "?api_key=f46ff8c86688e5aadcab58619a8e41e4";
 const pagina = '&language=en-US&page=1';
-const autorizacion = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNDZmZjhjODY2ODhlNWFhZGNhYjU4NjE5YThlNDFlNCIsInN1YiI6IjY0MjlmZjcxNjY1NDA4MDBmNDM0MWY3OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.sxGcJjOdYQ3SZ9JYkR9VbOcTtGy_qb5-95jn9W-f2rc";
+const autorizacion = import.meta.env.VITE_APP_TOKEN_API;
 //const CORS = "https://cors-anywhere.herokuapp.com/";
-const CORS ="";
 const mokeoActivo = false;
 const opciones = {
   mode: "cors",
@@ -17,9 +15,9 @@ const peliculasArray="{\"results\":[{\"adult\":false,\"backdrop_path\":\"/3CxUnd
 export async function get(path , numeroPagina) {
     // console.log(API + path + API_KEY);
     path = `${path}?page=${numeroPagina ? numeroPagina : 1}`;
-    console.log(CORS + API + path);
+    console.log( API + path);
   if(!mokeoActivo){
-    return fetch(CORS + API + path, opciones).then((result) => result.json());
+    return fetch( API + path, opciones).then((result) => result.json());
   }else{
     return mockData(peliculasArray);
   }
@@ -29,7 +27,7 @@ export async function getSimilarMovies(movieId){
   const path = `movie/${movieId}/similar`;
  // console.log(API + path + API_KEY);
   if(!mokeoActivo){
-    return fetch(CORS + API + path , opciones).then((result) => result.json());
+    return fetch( API + path , opciones).then((result) => result.json());
   }else{
     return mockData(peliculasArray);
   }

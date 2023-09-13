@@ -22,6 +22,7 @@ export function MovieDetalls() {
       console.log(movies);
       return;
     });
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, [movieId]);
   const urlImg = getUrlImagen(movie, 300);
   let generosVista = "";
@@ -46,11 +47,13 @@ export function MovieDetalls() {
         <p className="col descripcion">{movie.overview}</p>
       </div>
       <div>
-        <div className="contenedor-similares">
-          {movies &&
-            movies.map((movie) => {
-              return <MovieCard movie={movie} key={movie.id} />;
-            })}
+        <div className="contenedorPrincipal">
+          <div className="contenedor-peliculas">
+            {movies &&
+              movies.map((movie) => {
+                return <MovieCard movie={movie} key={movie.id} />;
+              })}
+          </div>
         </div>
       </div>
     </div>

@@ -1,0 +1,19 @@
+.botonPaginado{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items:center;
+}
+
+.botonPaginado p{
+    color:white;
+}
+
+.botonPaginado button{
+    padding: 2px;
+    background-color:#1f192a;
+    color:white;
+    border:1px solid #1f192a;
+    font-size: 1rem;
+
+}

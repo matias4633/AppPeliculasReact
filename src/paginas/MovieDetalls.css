@@ -9,6 +9,7 @@
 .contenedor-tarjeta{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .imagen-detalles{
    border-radius: 15px;
@@ -25,10 +26,4 @@
 }
 .generos{
     color: white;
-}
-.contenedor-similares{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-    gap: 1rem;
-    padding: 2rem;
 }

@@ -15,7 +15,8 @@
 
 .contenedorBanner img {
     height: 65vh;
-   
+    width: 100%;
+    object-fit: cover;
 }
 
 .contenedorBanner::after{
@@ -45,7 +46,7 @@
 .bottonPrincipal{
     background-color: #03a9f4;
     border: none;
-    padding:4px 18px;
+    padding:4px 12px;
     border-radius:8px;
     color: white;
     font-weight: bold;
