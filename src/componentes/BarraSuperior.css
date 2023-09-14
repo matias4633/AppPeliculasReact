@@ -1,0 +1,14 @@
+.contBarra{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    z-index: 2;
+}
+.contBuscador{
+    position: fixed;
+    right: 3%;
+    top: 4%;
+}
+.fondoScroll{
+    background-color: red;
+}

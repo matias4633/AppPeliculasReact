@@ -1,3 +1,5 @@
+import App from "../App";
+
 const API = "https://api.themoviedb.org/3/";
 const pagina = '&language=en-US&page=1';
 const autorizacion = import.meta.env.VITE_APP_TOKEN_API;
@@ -32,6 +34,13 @@ export async function getSimilarMovies(movieId){
     return mockData(peliculasArray);
   }
  
+}
+
+export async function getMoviesByWord(word , pag){
+  const path = `search/keyword?query=${word}?page=${pag ? pag : 1}`;
+
+  return fetch(API + path , opciones).then(r=>r.json());
+
 }
 
 function mockData(jsonString) {

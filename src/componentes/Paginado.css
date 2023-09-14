@@ -17,3 +17,10 @@
     font-size: 1rem;
 
 }
+
+@media (min-width:1024px){
+    .botonPaginado{
+        margin: 0 6rem;
+    }
+
+}
