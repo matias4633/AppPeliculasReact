@@ -26,8 +26,8 @@ a{
 .imagenCard{
     border-radius: 10px;
     object-fit: cover;
-    width : 146px;
-    height : 200px;
+    width : 100%;
+    height : 100%;
 }
 
 .puntaje{
@@ -38,7 +38,7 @@ a{
     font-size: 0.8rem;
     position: absolute;
     top: 2%;
-    left: 14%;
+    left: 4%;
 }
 
 /*@media(max-width: 560px){
@@ -54,3 +54,10 @@ a{
         z-index: 0;
     }
 }*/
+
+@media (min-width:1024px){
+    .imagenCard{
+        width : 100%;
+        height : 100%;
+    }
+}

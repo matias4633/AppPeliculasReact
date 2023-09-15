@@ -12,8 +12,9 @@
 }
 
 .bannerContent {
-    height: 72vh;
-    width: 100%;
+   /* height: 72vh;
+    width: 100%; */
+    height:85vh;
 }
 
 .contenedorBanner {
@@ -27,7 +28,7 @@
 }
 
 .contenedorBanner img {
-    height: 65vh;
+    height: 85vh;
     width: 100%;
     object-fit: cover;
 }
@@ -44,7 +45,7 @@
 
 .cont-info {
     position: relative;
-    bottom: 340px;
+    bottom: 200px;
     padding: 14px;
     color: white;
 }
@@ -70,7 +71,7 @@
         transform: translateX(0px);
     }
 
-    30% {
+    38% {
         transform: translateX(0px);
     }
 
@@ -78,7 +79,7 @@
         transform: translateX(-100%);
     }
     
-    50% {
+    58% {
         transform: translateX(-100%);
     }
 
@@ -86,7 +87,7 @@
         transform: translateX(-200%);
     }
 
-    70% {
+    78% {
         transform: translateX(-200%);
     }
 
@@ -94,11 +95,40 @@
         transform: translateX(-300%);
     }
 
-    90% {
+    98% {
         transform: translateX(-300%);
     }
 
     100% {
         transform: translateX(0px);
+    }
+}
+
+@keyframes carousel2 {
+    75% {
+        transform: translateX(0px);
+    }
+
+    95% {
+        transform: translateX(-100%);
+    }
+   
+
+    98% {
+        transform: translateX(-100%);
+    }
+
+    99% {
+        transform: translateX(-100%);
+    }
+
+}
+
+@media (min-width: 1024px){
+    .bannerContent {
+        height:67vh;
+    }
+    .contenedorBanner img {
+        height:62vh;
     }
 }

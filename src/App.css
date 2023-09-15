@@ -8,6 +8,7 @@
 }
 h1,h2,h3,h4,h5{
   color:white;
+  text-align: center;
 }
 body{
   background-color: #111;
@@ -22,7 +23,6 @@ body{
 .logoPrincipal{
   width: 74px;
   margin: 0 2.5%;
-  position: fixed;
   z-index: 9;
   overflow: hidden;
   border-radius: 5rem;

@@ -1,5 +1,6 @@
 .contenedorBuscador{
     position: relative;
+    margin: 0 12px;
 }
 .contBuscador input{
     position: relative;
