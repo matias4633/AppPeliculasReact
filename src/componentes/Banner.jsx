@@ -69,3 +69,40 @@ export function Banner({array}){
         </div>
     )
 }
+
+export function Carrousel({array}){
+    let arrayAMostrar = array.slice(2);
+    return (
+        <div className="contenedorCarousel">  
+           {arrayAMostrar.map((peli)=>{
+                return <div className="tarjeta">
+                {peli.id && 
+                <Link to={"/movies/"+peli.id}>
+                 <div className="contenedorBanner" ><img  id="banner" src={getUrlImagenBanner(peli,1280)} ></img>
+                </div>
+                <div className="cont-info">
+                        <h3 className="subTituloBlanco">{peli.title}</h3>
+                        <p>{peli.overview.substring(0,120)}</p>
+                        <button className="bottonPrincipal">▶ VER PELICULA</button>
+                    </div>
+                </Link>}
+                
+            </div>
+            })} 
+
+          { /* <div>
+                {peli.id && 
+                <Link to={"/movies/"+peli.id}>
+                 <div className="contenedorBanner" ><img  id="banner" src={getUrlImagenBanner(peli,1280)} ></img>
+                </div>
+                <div className="cont-info">
+                        <h3 className="subTituloBlanco">{peli.title}</h3>
+                        <p>{peli.overview.substring(0,120)}</p>
+                        <button className="bottonPrincipal">▶ VER PELICULA</button>
+                    </div>
+                </Link>}
+                
+            </div> */}
+        </div>
+    )
+}

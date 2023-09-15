@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { getUrlImagen } from "../utils/getUrlImagen";
 
 export function MovieCard({ movie }) {
-  console.log(movie);
   const imageUrl = getUrlImagen(movie,300);
 
   return (

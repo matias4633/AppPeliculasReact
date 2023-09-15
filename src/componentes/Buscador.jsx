@@ -2,6 +2,8 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import "./Buscador.css";
+import {actualizarListado} from "./ContextMovieCard";
+import { getMoviesByWord } from "../data/httpCliente";
 
 export function Buscador(){
     let timeout;
@@ -9,8 +11,12 @@ export function Buscador(){
         let key = evt.target.value;
         clearTimeout(timeout);
         timeout=setTimeout(async()=>{
-            let data = await getMoviesByWord(key);
-            console.log(data);
+            if(key){
+                let data = await getMoviesByWord(key);
+                console.log(data);
+                actualizarListado(data.results);
+            }
+           
         },2000)
     };
     

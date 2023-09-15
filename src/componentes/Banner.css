@@ -1,15 +1,28 @@
-.bannerContent{
+.contenedorCarousel {
+    display: flex;
+}
+
+.tarjeta {
+    flex: 0 0 100%;
+    animation-name: carousel;
+    animation-duration: 30s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.bannerContent {
     height: 72vh;
     width: 100%;
 }
 
-.contenedorBanner{
+.contenedorBanner {
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
-   /* min-width: 1400px;*/
+    /* min-width: 1400px;*/
     object-fit: cover;
 }
 
@@ -19,7 +32,7 @@
     object-fit: cover;
 }
 
-.contenedorBanner::after{
+/* .contenedorBanner::after{
     content: "";
     width: 100%;
     height: 72vh;
@@ -27,28 +40,65 @@
     left: 0;
     top: 0;
     background-image: linear-gradient(to top, #000000, transparent);
+}*/
+
+.cont-info {
+    position: relative;
+    bottom: 340px;
+    padding: 14px;
+    color: white;
 }
 
-.cont-info{
-    position: relative;
-    bottom:240px;
-    padding: 14px;
-    color:white;
-}
-.cont-info h3{
+.cont-info h3 {
     font-size: 28px;
 }
 
-.subTituloBlanco{
-    
-}
+.subTituloBlanco {}
 
-.bottonPrincipal{
+.bottonPrincipal {
     background-color: #03a9f4;
     border: none;
-    padding:4px 12px;
-    border-radius:8px;
+    padding: 4px 12px;
+    border-radius: 8px;
     color: white;
     font-weight: bold;
     margin: 12px 0;
+}
+
+@keyframes carousel {
+    20% {
+        transform: translateX(0px);
+    }
+
+    30% {
+        transform: translateX(0px);
+    }
+
+    40% {
+        transform: translateX(-100%);
+    }
+    
+    50% {
+        transform: translateX(-100%);
+    }
+
+    60% {
+        transform: translateX(-200%);
+    }
+
+    70% {
+        transform: translateX(-200%);
+    }
+
+    80% {
+        transform: translateX(-300%);
+    }
+
+    90% {
+        transform: translateX(-300%);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
 }

@@ -38,7 +38,7 @@ export async function getSimilarMovies(movieId){
 
 export async function getMoviesByWord(word , pag){
   const path = `search/keyword?query=${word}?page=${pag ? pag : 1}`;
-
+  console.log(path);
   return fetch(API + path , opciones).then(r=>r.json());
 
 }
