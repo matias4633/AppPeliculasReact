@@ -1,0 +1,23 @@
+.contenedorBuscador{
+    position: relative;
+}
+.contBuscador input{
+    position: relative;
+    background-color: black;
+    opacity: 0.8;
+    padding: 6px 12px;
+    width: 100%;
+    border-color: black;
+    border-radius: 8px;
+    caret-color:white;
+    color:white;
+}
+.contBuscador input::placeholder{
+    padding: 0 4px;
+}
+.contBuscador a{
+    position: absolute;
+    right: 8%;
+    top:8%;
+    color:white;
+}
