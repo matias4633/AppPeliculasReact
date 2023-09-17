@@ -17,7 +17,7 @@ const peliculasArray="{\"results\":[{\"adult\":false,\"backdrop_path\":\"/3CxUnd
 export async function get(path , numeroPagina) {
     // console.log(API + path + API_KEY);
     path = `${path}?page=${numeroPagina ? numeroPagina : 1}`;
-    console.log( API + path);
+    //console.log( API + path);
   if(!mokeoActivo){
     return fetch( API + path, opciones).then((result) => result.json());
   }else{
@@ -38,7 +38,7 @@ export async function getSimilarMovies(movieId){
 
 export async function getMoviesByWord(word , pag){
   const path = `search/keyword?query=${word}?page=${pag ? pag : 1}`;
-  console.log(path);
+  //console.log(path);
   return fetch(API + path , opciones).then(r=>r.json());
 
 }

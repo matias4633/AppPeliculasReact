@@ -9,11 +9,11 @@ export function MovieCard({ movie }) {
     <div className="contenedor-movie">
       <Link to={"/movies/"+movie.id}>
         <div>
-          <img
+          {movie && <img
             className="imagenCard"
             src={imageUrl}
             alt={movie.title}
-          ></img>
+          ></img>}
           <span className="puntaje">{movie.vote_average % 1 == 0 ? (movie.vote_average+'.0') : movie.vote_average.toFixed(1) }</span>
         </div>
         

@@ -5,6 +5,7 @@ import '../componentes/ContextMovieCard.css';
 import { Banner } from "./Banner";
 import { Carrousel } from "./Banner";
 import { Paginado } from "./Paginado";
+import { ListPelis } from "./ListPelis";
 
 
 let actualizarListado;
@@ -15,10 +16,11 @@ export function ContextMovieCard(){
     const [pagina , setPagina] = useState(1);
     const [data,setData] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const [coordX , setcoordX] = useState(null);
 
     useEffect(()=>{
         get('movie/popular' , pagina).then((data) =>{
-            console.log(data);
+            //console.log(data);
             setData(data);
             setMovies(data.results);
         })
@@ -34,7 +36,7 @@ export function ContextMovieCard(){
     }*/
 
     const recibirPagina = (pagina)=>{
-        if(pagina){
+        if(pagina && pagina>0){
             setPagina(pagina);
         }
     }
@@ -42,6 +44,28 @@ export function ContextMovieCard(){
     actualizarListado = (movies)=>{
        setMovies(movies);
     }
+
+    const handleTouchStart = (e) => {
+        setcoordX(e.touches[0].clientX);
+    };
+
+    const  handleTouchMove = (e) => {
+        if (coordX === null ) {
+          return;
+        }
+    
+        const currentX = e.touches[0].clientX;
+        const deltaX = currentX - coordX;
+        if (Math.abs(deltaX) > 5) {
+          if (deltaX > 0) {
+            recibirPagina(pagina-1)
+          } else {
+            recibirPagina(pagina+1)
+          }
+          document.getElementById("contenedor-peliculas").scrollIntoView();
+        }
+        setcoordX(null);
+      };
 
     return (
     <div>
@@ -52,15 +76,11 @@ export function ContextMovieCard(){
         <div className="paginado">
         <Paginado pagina={pagina}  onCambioPagina={recibirPagina}/>
         </div>
-        
+        <span id='contenedor-peliculas'></span>
         <div className="tituloContenedor">Últimas Peliculas Actualizadas</div>
-        <div className="contenedorPrincipal">
-            <div className="contenedor-peliculas">
-                {movies.map((movie)=>{
-                    return <MovieCard movie={movie} key={movie.id}/>
-                })}
-                {movies && <h3>No se encontraron resultados</h3>}
-            </div>
+        <div className="contenedorPrincipal" >
+           
+            <ListPelis  movies={movies} classes={"contenedor-peliculas"} inicioTouch={handleTouchStart} finTouch={handleTouchMove}  ></ListPelis>
         </div>
        
         <div className="paginado">

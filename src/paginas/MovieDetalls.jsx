@@ -9,17 +9,17 @@ export function MovieDetalls() {
   const [movie, setMovie] = useState([]);
   const [generos, setGeneros] = useState([]);
   const [movies, setMovies] = useState([]);
-  console.log(movieId);
+ // console.log(movieId);
   useEffect(() => {
     get("movie/" + movieId).then((result) => {
-      console.log(result);
+      //console.log(result);
       setGeneros(result.genres);
       setMovie(result);
       return;
     });
     getSimilarMovies(movieId).then((data) => {
       setMovies(data.results);
-      console.log(movies);
+      //console.log(movies);
       return;
     });
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });

@@ -11,11 +11,11 @@ export function Buscador(){
         let key = evt.target.value;
         clearTimeout(timeout);
         timeout=setTimeout(async()=>{
-            /*if(key){
+            if(key){
                 let data = await getMoviesByWord(key);
                 console.log(data);
-                actualizarListado(data.results);
-            }*/
+                //actualizarListado(data.results);
+            }
            
         },2000)
     };
