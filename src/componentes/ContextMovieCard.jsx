@@ -62,23 +62,22 @@ export function ContextMovieCard(){
           } else {
             recibirPagina(pagina+1)
           }
-          document.getElementById("contenedor-peliculas").scrollIntoView();
+          document.getElementById("bannerContent").scrollIntoView({behavior:"smooth" , block:"end" , inline:"start"});
         }
         setcoordX(null);
       };
 
     return (
     <div>
-        <div className="bannerContent">
+        <div className="bannerContent" id="bannerContent">
            {/* {movies.length > 0 && <Banner array={movies} />}*/}
             {movies.length > 0 && <Carrousel array={movies} />}
         </div>
         <div className="paginado">
         <Paginado pagina={pagina}  onCambioPagina={recibirPagina}/>
         </div>
-        <span id='contenedor-peliculas'></span>
         <div className="tituloContenedor">Últimas Peliculas Actualizadas</div>
-        <div className="contenedorPrincipal" >
+        <div className="contenedorPrincipal" id='contenedor-peliculas' >
            
             <ListPelis  movies={movies} classes={"contenedor-peliculas"} inicioTouch={handleTouchStart} finTouch={handleTouchMove}  ></ListPelis>
         </div>
