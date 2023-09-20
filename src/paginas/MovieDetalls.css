@@ -2,6 +2,18 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    max-width: max-content;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.contenedorPrincipal{
+    width: 100%;
+    padding: 12px;
+}
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .col{
     max-width: 400px;
@@ -26,4 +38,26 @@
 }
 .generos{
     color: white;
+}
+.contReproductorDescript{
+    width: 100%;
+    max-width: 770px;
+}
+.reproductor{
+    border: 1.5px solid rgb(102, 100, 100);
+    border-radius: 24px;
+    height: 50vw;
+    margin: 12px;
+    max-width: 770px;
+    overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+    .contenedor-detalles{
+        flex-wrap: nowrap;
+        max-width: 70%;
+    }
+    .reproductor{
+        height:  20vw;
+    }
 }

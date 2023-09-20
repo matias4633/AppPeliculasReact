@@ -2,6 +2,7 @@ import App from "../App";
 
 const API = "https://api.themoviedb.org/3/";
 const pagina = '&language=en-US&page=1';
+const YOUTUBE = "https://www.youtube.com/watch?v=";
 const autorizacion = import.meta.env.VITE_APP_TOKEN_API;
 //const CORS = "https://cors-anywhere.herokuapp.com/";
 const mokeoActivo = false;
@@ -41,6 +42,17 @@ export async function getMoviesByWord(word , pag){
   //console.log(path);
   return fetch(API + path , opciones).then(r=>r.json());
 
+}
+
+export async function getTrailerVideo(movie_id){
+  const path = `movie/${movie_id}/videos`
+  let array = await fetch(API + path , opciones).then(r=>r.json());
+  let trailer = array.results.find(({type})=> type === "Trailer");
+
+  if(!trailer)
+    return null;
+
+  return YOUTUBE + trailer.key;
 }
 
 function mockData(jsonString) {

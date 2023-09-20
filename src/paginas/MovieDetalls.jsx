@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { get, getSimilarMovies } from "../data/httpCliente";
+import { get, getSimilarMovies, getTrailerVideo } from "../data/httpCliente";
 import "../paginas/MovieDetalls.css";
 import { getUrlImagen } from "../utils/getUrlImagen";
 import { MovieCard } from "../componentes/MovieCard";
+import ReactPlayer from 'react-player/youtube'
+
 export function MovieDetalls() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState([]);
   const [generos, setGeneros] = useState([]);
   const [movies, setMovies] = useState([]);
+  const [video , setVideo] = useState(null);
  // console.log(movieId);
   useEffect(() => {
     get("movie/" + movieId).then((result) => {
@@ -22,6 +25,12 @@ export function MovieDetalls() {
       //console.log(movies);
       return;
     });
+
+    getTrailerVideo(movieId).then((data) => {
+      console.log(data);
+      setVideo(data);
+      return;
+    });
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, [movieId]);
   const urlImg = getUrlImagen(movie, 300);
@@ -30,8 +39,8 @@ export function MovieDetalls() {
     generosVista += ` ${elemento.name} `;
   });
   return (
-    <div>
-      <div className="contenedor-detalles">
+    <div className="center">
+      <div className="contenedor-detalles ">
         <div className="contenedor-tarjeta">
           <img
             className="col imagen-detalles"
@@ -43,10 +52,13 @@ export function MovieDetalls() {
             <strong>Generos : {generosVista}</strong>
           </p>
         </div>
-
-        <p className="col descripcion">{movie.overview}</p>
+        <div className="contReproductorDescript">
+          {video && <div className="reproductor"><ReactPlayer url={video} playing={true}  width='100%'
+          height='100%' /></div>}
+          <p className=" descripcion">{movie.overview}</p>
+        </div>
+       
       </div>
-      <div>
         <div className="contenedorPrincipal">
           <div className="contenedor-peliculas">
             {movies &&
@@ -55,7 +67,6 @@ export function MovieDetalls() {
               })}
           </div>
         </div>
-      </div>
     </div>
   );
 }
