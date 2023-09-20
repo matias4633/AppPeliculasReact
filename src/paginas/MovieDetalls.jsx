@@ -12,12 +12,21 @@ export function MovieDetalls() {
   const [generos, setGeneros] = useState([]);
   const [movies, setMovies] = useState([]);
   const [video , setVideo] = useState(null);
+  const [urlImg , setUrlImg] = useState(null);
+  const [generosVista , setGenerosVista] = useState(null);
+
  // console.log(movieId);
   useEffect(() => {
     get("movie/" + movieId).then((result) => {
       //console.log(result);
       setGeneros(result.genres);
       setMovie(result);
+      setUrlImg(getUrlImagen(result, 300));
+      let generosVistaStrig = "";
+      result.genres.forEach((elemento) => {
+        generosVistaStrig += ` ${elemento.name} `;
+      });
+      setGenerosVista(generosVistaStrig);
       return;
     });
     getSimilarMovies(movieId).then((data) => {
@@ -31,13 +40,10 @@ export function MovieDetalls() {
       setVideo(data);
       return;
     });
+    
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, [movieId]);
-  const urlImg = getUrlImagen(movie, 300);
-  let generosVista = "";
-  generos.forEach((elemento) => {
-    generosVista += ` ${elemento.name} `;
-  });
+  
   return (
     <div className="center">
       <div className="contenedor-detalles ">

@@ -1,4 +1,4 @@
-import error from '../imagenes/error.webp';
+import error from '../imagenes/error.jpg';
 
 export function getUrlImagen(movie , ancho){
     let url;
