@@ -78,7 +78,6 @@ export function Carrousel({array}){
     return (
         <div className="contenedorCarousel">  
            {arrayAMostrar.map(( peli,index)=>{
-                console.log(index);
                 if(index < 5){
                     return <div className="tarjeta">
                         {peli.id && 

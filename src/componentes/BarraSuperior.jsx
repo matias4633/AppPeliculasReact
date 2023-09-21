@@ -9,7 +9,7 @@ export function BarraSuperior(){
 
     useEffect(()=>{
         const cambiarFondoBarra = ()=>{
-            if(window.scrollY>0){
+            if(window.scrollY>10){
                 setFondo("fondoScroll");
             }else{
                 setFondo("");

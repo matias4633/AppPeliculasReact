@@ -6,12 +6,13 @@
     width: 100%;
     justify-content: space-between;
     z-index: 2;
+    transition: all 2s;
+    background-color: black;
 }
 .contBuscador{
    
 }
 .fondoScroll{
-    background-color: black;
     position: fixed;
     opacity: 0.9;
 }

@@ -6,7 +6,7 @@ import { Banner } from "./Banner";
 import { Carrousel } from "./Banner";
 import { Paginado } from "./Paginado";
 import { ListPelis } from "./ListPelis";
-
+import { Categorias } from "./Categorias";
 
 let actualizarListado;
 
@@ -76,11 +76,17 @@ export function ContextMovieCard(){
         <div className="paginado">
         <Paginado pagina={pagina}  onCambioPagina={recibirPagina}/>
         </div>
-        <div className="tituloContenedor">Últimas Peliculas Actualizadas</div>
-        <div className="contenedorPrincipal" id='contenedor-peliculas' >
-           
-            <ListPelis  movies={movies} classes={"contenedor-peliculas"} inicioTouch={handleTouchStart} finTouch={handleTouchMove}  ></ListPelis>
+        <div className="contenedorInferior">
+            <div className="contenedorPrincipal" id='contenedor-peliculas' >
+                <div className="tituloContenedor"><p>Últimas Peliculas Actualizadas</p></div>
+                <div className="contenedorPeliCat">
+                    <ListPelis  movies={movies} classes={"contenedor-peliculas"} inicioTouch={handleTouchStart} finTouch={handleTouchMove}  ></ListPelis>
+                    {/* <Categorias/> */}
+                </div>
+                
+            </div>
         </div>
+        
        
         <div className="paginado">
         <Paginado pagina={pagina}  onCambioPagina={recibirPagina}/>

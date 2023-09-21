@@ -65,14 +65,17 @@ export function MovieDetalls() {
         </div>
        
       </div>
-        <div className="contenedorPrincipal">
-          <div className="contenedor-peliculas">
-            {movies &&
-              movies.map((movie) => {
-                return <MovieCard movie={movie} key={movie.id} />;
-              })}
+        <div className="contenedorInferior">
+          <div className="contenedorPrincipal">
+            <div className="contenedor-peliculas">
+              {movies &&
+                movies.map((movie) => {
+                  return <MovieCard movie={movie} key={movie.id} />;
+                })}
+            </div>
           </div>
         </div>
+        
     </div>
   );
 }
