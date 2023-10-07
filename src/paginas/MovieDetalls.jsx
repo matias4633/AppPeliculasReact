@@ -45,7 +45,7 @@ export function MovieDetalls() {
   }, [movieId]);
   
   return (
-    <div className="center">
+    <div className="center contenedorDetalles">
       <div className="contenedor-detalles ">
         <div className="contenedor-tarjeta">
           <img
