@@ -51,6 +51,9 @@
     max-width: 770px;
     overflow: hidden;
 }
+.contBarra{
+    position:relative !important;
+}
 
 @media (min-width: 1024px) {
     .contenedor-detalles{
