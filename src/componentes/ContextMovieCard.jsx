@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {get} from "../data/httpCliente";
+import {getSinPaginado , getCategorias} from "../data/httpCliente";
 import { MovieCard } from "./MovieCard";
 import '../componentes/ContextMovieCard.css';
 import { Banner } from "./Banner";
@@ -7,6 +7,7 @@ import { Carrousel } from "./Banner";
 import { Paginado } from "./Paginado";
 import { ListPelis } from "./ListPelis";
 import { Categorias } from "./Categorias";
+
 
 let actualizarListado;
 
@@ -17,15 +18,25 @@ export function ContextMovieCard(){
     const [data,setData] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [coordX , setcoordX] = useState(null);
+    const [categorias , setCategorias] = useState([]);
+    const [url,setUrl] = useState(`movie/popular?`);
 
     useEffect(()=>{
-        get('movie/popular' , pagina).then((data) =>{
-            //console.log(data);
-            setData(data);
+            console.log(url);
+            getSinPaginado(url+`page=${pagina}`).then((data) =>{
+            console.log(data);
             setMovies(data.results);
         })
-        
-    },[pagina]);
+    },[pagina , url]);
+
+    useEffect(()=>{
+        async function getData(){
+            let data = await getCategorias();
+            setCategorias(data.genres);
+            console.log(data);
+        }
+        getData();
+    },[]);
 
    /*  const handleChangePagina = (evento)=>{ Para cuiando es de un input
         let pagina = evento.target.value;
@@ -67,6 +78,12 @@ export function ContextMovieCard(){
         setcoordX(null);
       };
 
+    const actualizarCategoria = (idCategoria)=>{
+        console.log(idCategoria);
+        setUrl(`discover/movie?include_adult=false&include_video=false&language=en-US&sort_by=popularity.desc&with_genres=${idCategoria}&`)
+        //document.getElementById("bannerContent").scrollIntoView({behavior:"smooth" , block:"end" , inline:"start"});
+    }
+
     return (
     <div>
         <div className="bannerContent" id="bannerContent">
@@ -81,7 +98,7 @@ export function ContextMovieCard(){
                 <div className="tituloContenedor"><p>Últimas Peliculas Actualizadas</p></div>
                 <div className="contenedorPeliCat">
                     <ListPelis  movies={movies} classes={"contenedor-peliculas"} inicioTouch={handleTouchStart} finTouch={handleTouchMove}  ></ListPelis>
-                    {/* <Categorias/> */}
+                    <Categorias array = {categorias} funcionOnclick={actualizarCategoria} />
                 </div>
                 
             </div>

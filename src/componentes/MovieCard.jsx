@@ -6,7 +6,7 @@ export function MovieCard({ movie }) {
   const imageUrl = getUrlImagen(movie,300);
 
   return (
-    <div className="contenedor-movie">
+    <div id={movie.id} className="contenedor-movie">
       <Link to={"/movies/"+movie.id}>
         <div>
           {movie && <img

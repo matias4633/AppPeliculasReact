@@ -1,9 +1,18 @@
 import React from "react";
+import "./Categorias.css";
 
-export function Categorias(){
+export function Categorias({array , funcionOnclick}){
     return (
         <>
-        <div style={{width:'600px',height:'300px' , background:'red'}}></div>
+        <div className="contenedorCategorias">
+            <h2>Categorias</h2>
+            <div className="contenedorCategoriasSpan">
+            {array && array.map((elemento)=>
+                <span key={elemento.id} onClick={()=>{funcionOnclick(elemento.id)}}>{elemento.name}</span>)
+            }
+            </div>
+           
+        </div>
         
         </>
     );

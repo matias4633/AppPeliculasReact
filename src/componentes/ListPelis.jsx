@@ -3,6 +3,7 @@ import { MovieCard } from "./MovieCard";
 
 
 export function ListPelis({movies, classes ,  inicioTouch , finTouch }){
+    console.log("Renderizo");
     return(
         <>
           <div className={classes}  onTouchStart={inicioTouch} onTouchMove={finTouch} >

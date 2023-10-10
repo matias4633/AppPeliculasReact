@@ -26,6 +26,18 @@ export async function get(path , numeroPagina) {
   }
   
 }
+
+export async function getSinPaginado(path) {
+  // console.log(API + path + API_KEY);
+  path = `${path}`;
+  //console.log( API + path);
+if(!mokeoActivo){
+  return fetch( API + path, opciones).then((result) => result.json());
+}else{
+  return mockData(peliculasArray);
+}
+
+}
 export async function getSimilarMovies(movieId){
   const path = `movie/${movieId}/similar`;
  // console.log(API + path + API_KEY);
@@ -53,6 +65,11 @@ export async function getTrailerVideo(movie_id){
     return null;
 
   return YOUTUBE + trailer.key;
+}
+
+export async function getCategorias(){
+  const path = `genre/movie/list?language=en`
+  return fetch(API + path , opciones).then(r=>r.json());
 }
 
 function mockData(jsonString) {

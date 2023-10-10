@@ -4,7 +4,7 @@ import { Buscador } from "./Buscador";
 import "./BarraSuperior.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilm , faStar , faPhotoVideo } from '@fortawesome/free-solid-svg-icons';
-
+import { Link } from "react-router-dom";
 export function BarraSuperior(){
     const [fondo , setFondo] = useState("");
     
@@ -32,7 +32,7 @@ export function BarraSuperior(){
                         <a href={'/'} ><img  src={logo}></img></a>
                     </div>
                     <div className="menu">
-                        <span><FontAwesomeIcon icon={faFilm} /> INICIO</span>
+                    <a href={'/'} ><span><FontAwesomeIcon icon={faFilm} /> INICIO</span></a>
                         <span><FontAwesomeIcon icon={faStar} /> ESTRENOS</span>
                         <span><FontAwesomeIcon icon={faPhotoVideo} /> SERIES</span>
                         <span>DMCA</span>

@@ -79,16 +79,18 @@ export function Carrousel({array}){
         <div className="contenedorCarousel">  
            {arrayAMostrar.map(( peli,index)=>{
                 if(index < 5){
-                    return <div className="tarjeta">
+                    return <div className="tarjeta" key={peli.id}>
                         {peli.id && 
-                            <div>
+                            <div >
+                                <Link to={"/movies/" + peli.id} >
                                 <div className="contenedorBanner" ><img  id="banner" src={getUrlImagenBanner(peli,1280)} ></img>
                                 </div>
                                 <div className="cont-info">
                                     <h3 className="subTituloBlanco">{peli.title.substring(0,20)}</h3>
                                     <p>{peli.overview.substring(0,120)+'...'}</p>
-                                <Link to={"/movies/" + peli.id} > <button className="bottonPrincipal">▶ VER PELICULA</button></Link>
+                                <button className="bottonPrincipal">▶ VER PELICULA</button>
                                 </div>
+                                </Link>
                             </div>
                     
                         }
